@@ -1,3 +1,4 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+soft_border:
+    resource: "@SoftBorderBundle/Resources/config/routing.yml"
+    prefix:   /
+
