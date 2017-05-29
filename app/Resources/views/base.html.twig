@@ -1,49 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Довідка{% endblock %}</title>
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/css/bootstrap.min.css') }}" type="text/css" media="all">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/css/bootstrap.min.css') }}" type="text/css" media="all">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/font-awesome/css/font-awesome.min.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/css/animate.css') }}" type="text/css" media="all">
+    <!-- Squad theme CSS -->
+    <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/css/style.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('bundles/pinanobootstrap3/color/default.css') }}" type="text/css" media="all">
+    <title>{% block title %}Довідка{% endblock %}</title>
+
 </head>
-<body>
-<div id="header" class="container">
-    <div class="row">
-        <div class="col-lg-6">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" >
+                <h1>BORDER COMPANY</h1>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#intro">Home</a></li>
+                <li><a href="#about">List Company</a></li>
+                <li><a href="#service">About US</a></li>
+                <li><a href="#contact">Add Company</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Section: intro -->
+<section id="intro" class="intro">
+
+    <div class="slogan">
+        <h2>WELCOME TO <span class="text_color">BORDER COMPANY</span> </h2>
+    </div>
+    <div class="page-scroll">
+        <a href="#service" class="btn btn-circle">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
+    </div>
+</section>
+
+<section id="about" class="home-section text-center">
+    <div class="heading-about">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <h2 id="logo" >Довідка</h2>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" class="form-control" placeholder="Пошук Компанії">
-                </div>
-                <div class="col-lg-2">
-                    <button class="btn btn-default">Пошук</button>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>List Company</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 text-right">
-            <a class="btn btn-success" href="{{ path('sonata_admin_dashboard') }}">Добавити компанію</a>
+    </div>
+</section>
+<!-- /Section: about -->
+
+
+<!-- Section: services -->
+<section id="service" class="home-section text-center bg-gray">
+
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>About Us</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{{ asset('bundles/pinanobootstrap3/img/icons/ico-software.png') }}" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Discovery</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{{ asset('bundles/pinanobootstrap3/img/icons/ico-dedicated.png') }}" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Dedicated</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-3 col-md-3">
+            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-box">
+                    <div class="service-icon">
+                        <img src="{{ asset('bundles/pinanobootstrap3/img/icons/ico-opensource.png') }}" alt="" />
+                    </div>
+                    <div class="service-desc">
+                        <h5>Open Source</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-sm-3 col-md-3">
+                <div class="wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{{ asset('bundles/pinanobootstrap3/img/icons/service-icon-4.png') }}" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Cloud System</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Section: services -->
 
-<div class="container">
-    {% block content %}{% endblock %}
-</div>
 
-<div id="footer" class="container">
-    <a href="">О проекте</a>
-    <a href="">RSS</a>
-    <a href="">API</a>
-    <a href="">Партнёрам</a>
-</div>
+
+
+<!-- Section: contact -->
+<section id="contact" class="home-section text-center">
+    <div class="heading-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>You Want ADD Comppany?</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="chome-section text-center">
+                <div class="widget-contact">
+                    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="{{ path('sonata_admin_dashboard') }}">Register NOW</a></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- /Section: contact -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="wow shake" data-wow-delay="0.4s">
+                    <div class="page-scroll marginbot-30">
+                        <a href="#intro" id="totop" class="btn btn-circle">
+                            <i class="fa fa-angle-double-up animated"></i>
+                        </a>
+                    </div>
+                </div>
+                <p>&copy;Copyright 2017 - SoftGroup. All rights reserved. <a href="http://bootstraptaste.com/">Bootstrap Themes</a> by BTM</p>
+                <!--
+					All links in the footer should remain intact.
+					Licenseing information is available at: http://bootstraptaste.com/license/
+					You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Squadfree
+				-->
+            </div>
+        </div>
+    </div>
+</footer>
+
 
 {% block javascripts %}
-    <script src="{{ asset('bundles/pinanobootstrap3/js/bootstrap.js') }}"></script>
+    <!-- Core JavaScript Files -->
+    <script src="{{ asset('bundles/pinanobootstrap3/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinanobootstrap3/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinanobootstrap3/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinanobootstrap3/js/jquery.scrollTo.js') }}"></script>
+    <script src="{{ asset('bundles/pinanobootstrap3/js/wow.min.js') }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset('bundles/pinanobootstrap3/js/custom.js') }}"></script>
+
 {% endblock %}
 </body>
 </html>

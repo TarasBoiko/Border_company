@@ -87,6 +87,10 @@ sonata_user:
   #security_acl: true # Uncomment for ACL support
   manager_type: orm # can be orm or mongodb
 
+sonata_admin:
+    title:      Border
+
+
 
 fos_user:
   db_driver:  orm # can be orm or odm

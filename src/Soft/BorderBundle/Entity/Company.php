@@ -631,4 +631,8 @@ class Company
     {
         $this->office->removeElement($office);
     }
+    public function __toString()
+    {
+        return $this->getcompany();
+    }
 }

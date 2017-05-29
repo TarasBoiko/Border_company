@@ -45,5 +45,9 @@ Soft\BorderBundle\Entity\Office:
                 inverseJoinColumns:
                     category_id:
                         referencedColumnName: id
+    oneToMany:
+            companies:
+                targetEntity: Company
+                mappedBy: office
     lifecycleCallbacks:
         prePersist: [setCreatedAtValue]
